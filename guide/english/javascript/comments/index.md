@@ -78,5 +78,23 @@ function hello() {
 hello();
 ```
 
+### What should add in comment?
+
+1. description of the fucntion, variable or class 
+2. method used for the block of code like GET, POST etc
+3. parameter list
+4. return or result info and type
+
+### example
+
+```
+/**
+* This will add two values as addition
+* GET
+* a, b number
+* return a+b number
+*/
+```
+
 #### More Information:
 * <a href='https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript' target='_blank' rel='nofollow'>How To Write Comments in JavaScript</a>
