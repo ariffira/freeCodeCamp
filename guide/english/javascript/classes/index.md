@@ -179,5 +179,28 @@ class Person {
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
+### Summary of class in JS
+
+```
+Class in Js
+          1. class-> object map of something
+
+          2. has:
+           -properties create as instance
+             name, age etc
+           - methods as instance
+             -detail, profiles etc
+          3. has constructor method as default
+class has :
+- constructor
+- properties of class
+- instance method
+- reuse of class
+- getter and setter method
+- inheritance of class
+- polymorphism  
+
+```
+
 
 
