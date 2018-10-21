@@ -79,3 +79,51 @@ In the above example, we make a mock request to a server. After 5 seconds elapse
 Also, if you are already familiar with `setTimeout`, then you've been using callback functions all along. The anonymous function argument passed into the above example's `setTimeout` function call is also a callback! So the example's original callback is actually executed by another callback. Be careful not to nest too many callbacks if you can help it, as this can lead to something called "callback hell"! As the name implies, it isn't a joy to deal with.
 
 Please refer to this link for more details on "callback hell" : http://callbackhell.com/
+
+# Example of Callback using restaurent 
+
+```
+<html>
+<body>
+    <h1>JS Callback Restaurent</h1>
+    <h2>We cook callback soup, burger for you!Please order</h2>
+
+    <ul>
+        <li>Food Name: Soup, Price: 12 Euro</li>
+        <li>Food Name: Burger, Price: 10 Euro</li>
+    </ul>
+    Give name: <input type="text" id="foodId">
+    <button onClick="getOrder()">Order the Food</button>
+    <p id="result"></p>
+
+    <script>
+        // Callbacks in JS
+        /* 
+        chef is getting orders from customer here and start to cook
+        */
+        function getOrder() {
+            let foodName = document.getElementById('foodId').value;
+            let foodPrice = (foodName=='burger') ? '10 Euro': '12 euro';
+            let imageName = (foodName == 'burger') ? 'burger.jpeg' : 'soup.jpeg';
+
+            cook(foodName, foodPrice, 'CallBack Restaurent', imageName, ()=> {
+                document.getElementById('result').innerHTML = 'Food is on the way, wait 5 sec please';
+                //console.log('Please wait for 5 sec.......');
+            });
+        }
+
+        function cook(a, b, c, imageName, callback) {
+            // wait when cooking
+            setTimeout(function whenFoodIsReady() {
+               document.getElementById('result').innerHTML = 'Ready! Please enjoy the Food. You order: ' + a + ' which cost: ' + b + ' Thanks for coming to ' + c + `<img src="${imageName}">`;
+
+
+               //console.log('Your Food is ready! Enjoy it. You ordered:' + a + ' and the price ' + b + 'thanks for coming ' + c);
+            }, 5000);
+            callback();
+        }
+    </script>
+</body>
+</html>
+```
+
